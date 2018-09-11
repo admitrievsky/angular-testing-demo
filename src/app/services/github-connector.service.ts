@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { SearchResults } from '../models/github-responses';
 
 export enum Order {
   descending = 'desc',
@@ -16,12 +17,12 @@ export class GithubConnectorService {
 
   constructor(private http: HttpClient) { }
 
-  searchRepositories(search, order: Order = Order.descending): Observable<any> {
+  searchRepositories(search, order: Order = Order.descending): Observable<SearchResults> {
     const params = new HttpParams ()
       .set('q', search)
       .set('order', order);
 
-    return this.http.get<any>(this.SEARCH_REPOSITORIES_URL, {
+    return this.http.get<SearchResults>(this.SEARCH_REPOSITORIES_URL, {
       params: params
     });
   }
