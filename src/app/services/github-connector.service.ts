@@ -17,10 +17,11 @@ export class GithubConnectorService {
 
   constructor(private http: HttpClient) { }
 
-  searchRepositories(search, order: Order = Order.descending): Observable<SearchResults> {
+  searchRepositories(search, order: Order = Order.descending, page = 0): Observable<SearchResults> {
     const params = new HttpParams ()
       .set('q', search)
-      .set('order', order);
+      .set('order', order)
+      .set('page', page.toString());
 
     return this.http.get<SearchResults>(this.SEARCH_REPOSITORIES_URL, {
       params: params
