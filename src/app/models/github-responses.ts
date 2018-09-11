@@ -7,6 +7,7 @@ export interface SearchResult {
   id: number;
   forks_count: number;
   stargazers_count: number;
+  score: number;
   watchers_count: number;
   full_name: string;
   description: string;

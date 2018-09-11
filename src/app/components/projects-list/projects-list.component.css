@@ -1,0 +1,23 @@
+.project {
+  min-height: 100px;
+  padding-top: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.project__logo {
+  float: left;
+  margin-right: 20px;
+}
+
+.project__logo img {
+  width: 80px;
+}
+
+.project__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.project:nth-child(even) {
+  background: #f8f8f8;
+}
