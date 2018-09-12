@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchResult } from '../../models/github-responses';
+import { Project } from '../../models/github-responses';
 import { CatScoreService } from '../../services/cat-score.service';
 
 @Component({
@@ -9,9 +9,9 @@ import { CatScoreService } from '../../services/cat-score.service';
 })
 export class CatScoreComponent implements OnInit {
   @Input()
-  project: SearchResult;
+  project: Project;
 
-  private score: number;
+  score: number;
 
   constructor(private catScoreService: CatScoreService) { }
 

@@ -3,7 +3,7 @@ export interface Owner {
   login: string;
 }
 
-export interface SearchResult {
+export interface Project {
   id: number;
   forks_count: number;
   stargazers_count: number;
@@ -17,5 +17,5 @@ export interface SearchResult {
 export interface SearchResults {
   incomplete_results: boolean;
   total_count: number;
-  items: SearchResult[];
+  items: Project[];
 };
