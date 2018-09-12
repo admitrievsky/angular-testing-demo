@@ -1,0 +1,7 @@
+.cat-score > * {
+  display: inline;
+}
+
+.cat-score__value {
+  padding: 0 10px;
+}
