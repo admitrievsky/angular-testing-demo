@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Project } from '../models/github-responses';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatScoreService {
-  constructor() { }
+  constructor(private storageService: LocalStorageService) { }
 
   private getStorageKey(project: Project): string {
     return `CAT_SCORE_SERVICE_${project.id}`;
   }
 
   get(project: Project): number {
-    return +localStorage.getItem(this.getStorageKey(project));
+    return +this.storageService.get(this.getStorageKey(project));
   }
 
   private set(project: Project, newValue: number) {
-    localStorage.setItem(
+    this.storageService.set(
       this.getStorageKey(project),
       newValue.toString()
     );
