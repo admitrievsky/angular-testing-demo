@@ -17,7 +17,7 @@ export class GithubConnectorService {
 
   constructor(private http: HttpClient) { }
 
-  searchRepositories(search, order: Order = Order.descending, page = 0): Observable<SearchResults> {
+  searchRepositories(search: string, order: Order = Order.descending, page = 0): Observable<SearchResults> {
     const params = new HttpParams ()
       .set('q', search)
       .set('order', order)
