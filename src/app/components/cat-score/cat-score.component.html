@@ -1,6 +1,6 @@
 <div class="cat-score">
-  <button class="cat-score__btn" (click)="decrease();">-</button>
+  <button class="cat-score__btn decrease" (click)="decrease();">-</button>
   <div class="cat-score__value">{{ score }}</div>
-  <button class="cat-score__btn" (click)="increase();">+</button>
+  <button class="cat-score__btn increase" (click)="increase();">+</button>
 </div>
-<span *ngFor="let i of ' '.repeat(score).split('')">🐱</span>
+<span *ngFor="let i of ' '.repeat(score).split('')" class="cat-score__ticks">🐱</span>
